@@ -10,9 +10,11 @@
         <local:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <DataGrid ItemsSource="{Binding DataGridData, Mode=TwoWay}">
+        <DataGrid ItemsSource="{Binding DataGridData, Mode=TwoWay}" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                
+                <DataGridTextColumn Header="Id"  Binding="{Binding Id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Name"  Binding="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                <DataGridTextColumn Header="Price"  Binding="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
